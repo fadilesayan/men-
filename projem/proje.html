@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+</head>
+<style>
+  body {
+    background-image: url(./image/arkaplan.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+
+
+  }
+
+  .filterDiv {
+    float: left;
+    color: #ffff;
+    width: 50%;
+    line-height: 100px;
+    text-align: center;
+    display: none;
+    margin-top: 15px;
+
+
+  }
+
+  .col-6 {
+    float: left;
+
+
+
+
+  }
+
+  .fiyat {
+    display: flex;
+    justify-content: space-between;
+    margin: -20px 10px 0px 10px;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+
+
+  }
+
+  .yazi {
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+
+
+  }
+
+  .yazi2 {
+    line-height: 2px;
+    text-align: left;
+    font-family: 'Times New Roman', Times, serif;
+
+
+
+
+
+  }
+
+  @media only screen and (max-width: 600px) {
+    .filterDiv {
+      width: 100%;
+      text-align-last: center;
+      border: solid black 1px;
+      border-radius: 20px;
+    }
+
+    .mobilKaydirma {
+      float: none;
+    }
+
+    img {
+      margin-left: 35px;
+    }
+  }
+
+
+  .show {
+    display: block;
+  }
+
+  .container {
+    margin-top: 20px;
+    overflow: hidden;
+
+
+  }
+
+  .btn {
+    border: none;
+    outline: none;
+    padding: 12px 16px;
+    background-color: #f1f1f1;
+    cursor: pointer;
+  }
+
+  .btn:hover {
+    background-color: #ddd;
+  }
+
+  .btn.active {
+    background-color: #666;
+    color: white;
+  }
+</style>
+
+<body>
+
+  <h2 style="text-align: center;">MENÜ</h2>
+  <br>
+  <div id="myBtnContainer" style="text-align: center">
+    <button class="btn active" onclick="filterSelection('all')"> Hepsi</button>
+    <button class="btn" onclick="filterSelection('corba')"> Çorbalar</button>
+    <button class="btn" onclick="filterSelection('yemek')"> Yemekler</button>
+    <button class="btn" onclick="filterSelection('araSicak')"> Ara Sıcaklar</button>
+    <button class="btn" onclick="filterSelection('salata')"> Salatalar</button>
+    <button class="btn" onclick="filterSelection('tatlı')"> Tatlılar</button>
+    <button class="btn" onclick="filterSelection('icecek')"> İçecekler</button>
+
+  </div>
+
+  <div class="container ">
+
+    <div class="filterDiv corba">
+      <div class="col-6 mobilKaydirma"><img style="width: 300px; height: 300px;" src="./image/mercimek.jpg"></div>
+      <div class="col-sm-12">
+        <div class="yazi fiyat">
+          <span>Mercimek Çorbası</span>
+          <span>100 TL</span>
+        </div>
+        <div>
+          <p class="yazi2 yazi"> Mercimekten yapılır.</p>
+          <p class="yazi2 yazi">Yeşillik ve limon ile servis edilir</p>
+        </div>
+      </div>
+    </div>
+    <div class="filterDiv corba">
+      <div class="col-6 mobilKaydirma"><img style="width: 300px; height: 300px;" src="./image/ezogelin.jpeg"></div>
+      <div class="col-sm-12">
+        <div class="yazi fiyat">
+          <span>Ezogelin Çorbası</span>
+          <span>80 TL</span>
+        </div>
+        <div>
+          <p class="yazi2 yazi">Kırmızı mercimek pirinçten yapılır</p>
+          <p class="yazi2 yazi"> Yeşillik ve limon ile servis edilir</p>
+        </div>
+      </div>
+    </div>
+    <div class="filterDiv corba">
+      <div class="col-6 mobilKaydirma"><img style="width: 300px; height: 300px;" src="./image/iskembe.jpg"></div>
+      <div class="col-sm-12">
+        <div class="yazi fiyat">
+          <span>İşkembe Çorbası</span>
+          <span>120 TL</span>
+        </div>
+        <div>
+          <p class="yazi2 yazi">İşkembeden yapılır.
+          <p>
+          <p class="yazi2 yazi">Sarımsaklı tereyağ ve yeşillik ile servis edilir</p>
+        </div>
+      </div>
+    </div>
+    <div class="filterDiv corba">
+      <div class="col-6 mobilKaydirma"><img style="width: 300px; height: 300px;" src="./image/kellepaça.jpg"></div>
+      <div class="col-sm-12">
+        <div class="yazi fiyat">
+          <span>Kelle Paça Çorbası</span>
+          <span>130 TL</span>
+        </div>
+        <div>
+          <p class="yazi2 yazi">Kelle ve paçadan yapılır.</p>
+          <p class="yazi2 yazi">Sarımsaklı tereyağ ve yeşillik ile servis edilir.</p>
+        </div>
+      </div>
+    </div>
+    <div class="filterDiv yemek">
+      <div class="col-6 mobilKaydirma"><img style="width: 300px; height: 300px;" src="./image/kuzusis.jpg"></div>
+      <div class="col-sm-12">
+        <div class="yazi fiyat">
+          <span>Kuzu Şiş</span>
+          <span>220 TL</span>
+        </div>
+        <div>
+          <p class="yazi2 yazi">Kuzunun kuşbaşı etinden yapılır.</p>
+          <p class="yazi2 yazi">Közlenmiş biber ve domates ile servis edilir.</p>
+        </div>
+      </div>
+    </div>
+    <div class="filterDiv yemek">
+      <div class="col-6 mobilKaydirma"><img style="width: 300px; height: 300px;" src="./image/sackavurma.webp"></div>
+      <div class="col-sm-12">
+        <div class="yazi fiyat">
+          <span>Saç Kavurma</span>
+          <span>180 TL</span>
+        </div>
+        <div>
+          <p class="yazi2 yazi">Kuzu ve dananın kuşbaşı etinden yapılır.</p>
+          <p class="yazi2 yazi">Yanında yeşillik ve meze ile servis edilir.</p>
+        </div>
+      </div>
+    </div>
+    <div class="filterDiv yemek">
+      <div class="col-6 mobilKaydirma"><img style="width: 300px; height: 300px;" src="./image/adanakebap.webp"></div>
+      <div class="col-sm-12">
+        <div class="yazi fiyat">
+          <span>Adana Kebap</span>
+          <span>160 TL</span>
+        </div>
+        <div>
+          <p class="yazi2 yazi">Dana kıymadan yapılır.</p>
+          <p class="yazi2 yazi">Közlenmiş biber ve domates ile servis edilir.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="filterDiv yemek">
+      <div class="col-6 mobilKaydirma"><img style="width: 300px; height: 300px;" src="./image/ciger.jpg"></div>
+      <div class="col-sm-12">
+        <div class="yazi fiyat">
+          <span>Ciğer Şiş</span>
+          <span>170 TL</span>
+        </div>
+        <div>
+          <p class="yazi2 yazi">Dana veya kuzu ciğerinden yapılır.</p>
+          <p class="yazi2 yazi"> Közlenmiş biber ve domates ile servis edilir.</p>
+        </div>
+      </div>
+    </div>
+    <div class="filterDiv yemek">
+      <div class="col-6 mobilKaydirma"><img style="width: 300px; height: 300px;" src="./image/karısıkızgara.jpeg"></div>
+      <div class="col-sm-12">
+        <div class="yazi fiyat">
+          <span>Karışık Izgara</span>
+          <span>350 TL</span>
+        </div>
+        <div>
+          <p class="yazi2 yazi">Karışık kebap ve ızgaradan oluşur</p>
+          <p class="yazi2 yazi">Közlenmiş biber ve domates ile servis edilir</p>
+        </div>
+      </div>
+    </div>
+    <div class="filterDiv yemek">
+      <div class="col-6 mobilKaydirma"><img style="width: 300px; height: 300px;" src="./image/beyti.webp"></div>
+      <div class="col-sm-12">
+        <div class="yazi fiyat">
+          <span>Beyti Sarma</span>
+          <span>210 TL</span>
+        </div>
+        <div>
+          <p class="yazi2 yazi">Dana kıymadan yapılır</p>
+          <p class="yazi2 yazi">Domates ve yoğurt ile servis edilir</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="filterDiv araSicak">
+      <div class="col-6 mobilKaydirma"><img style="width: 300px; height: 300px;" src="./image/icliköfte.jpg"></div>
+      <div class="col-sm-12">
+        <div class="yazi fiyat">
+          <span>İçli Köfte</span>
+          <span>90 TL</span>
+        </div>
+        <div>
+          <p class="yazi2 yazi">Dana kıyma salça,soğan ve cevizden yapılır.</p>
+          <p class="yazi2 yazi">Yanında limon ve yeşillik ile servis edilir</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="filterDiv araSicak">
+      <div class="col-6 mobilKaydirma"><img style="width: 300px; height: 300px;" src="./image/kusbasılıpide.jpg"></div>
+      <div class="col-sm-12">
+        <div class="yazi fiyat">
+          <span>Kuşbaşi Pide</span>
+          <span>130 TL</span>
+        </div>
+        <div>
+          <p class="yazi2 yazi">Kuşbaşı etten yapılır</p>
+          <p class="yazi2 yazi">Limon ve yemek ile servis edilir</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="filterDiv araSicak">
+      <div class="col-6 mobilKaydirma"><img style="width: 300px; height: 300px;" src="./image/kasarlıpide.webp"></div>
+      <div class="col-sm-12">
+        <div class="yazi fiyat">
+          <span>Kaşarlı Pide</span>
+          <span>100 TL</span>
+        </div>
+        <div>
+          <p class="yazi2 yazi">Kaşar peynirinden yapılır</p>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="filterDiv araSicak">
+      <div class="col-6 mobilKaydirma"><img style="width: 300px; height: 300px;" src="./image/lahmacun.webp"></div>
+      <div class="col-sm-12">
+        <div class="yazi fiyat">
+          <span>Lahmacun</span>
+          <span>100 TL</span>
+        </div>
+        <div>
+          <p class="yazi2 yazi">Dana kıymadan yapılır </p>
+          <p class="yazi2 yazi">Limon ve yeşillik ile servis edilir</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="filterDiv salata">
+      <div class="col-6 mobilKaydirma"><img style="width: 300px; height: 300px;" src="./image/kasıksalata.jpg"></div>
+      <div class="col-sm-12">
+        <div class="yazi fiyat">
+          <span>Kaşık Salata</span>
+          <span>70 TL</span>
+        </div>
+        <div>
+          <p class="yazi2 yazi">Özel soslarla hazırladığımız salatamızdır</p>
+
+        </div>
+      </div>
+    </div>
+    <div class="filterDiv salata">
+      <div class="col-6 mobilKaydirma"><img style="width: 300px; height: 300px;" src="./image/gavurdagsalata.jpg"></div>
+      <div class="col-sm-12">
+        <div class="yazi fiyat">
+          <span>Gavurdağ Salata</span>
+          <span>90 TL</span>
+        </div>
+        <div>
+          <p class="yazi2 yazi">Kaşık salatasından farkı içinde ceviz olmasıdır</p>
+        </div>
+      </div>
+    </div>
+    <div class="filterDiv tatlı">
+      <div class="col-6 mobilKaydirma"><img style="width: 300px; height: 300px;" src="./image/katmer.jpg"></div>
+      <div class="col-sm-12">
+        <div class="yazi fiyat">
+          <span>Katmer </span>
+          <span>200 TL</span>
+        </div>
+        <div>
+          <p class="yazi2 yazi">Dondurma ve meyve tabağı ile servis edilir.</p>
+
+        </div>
+      </div>
+    </div>
+    <div class="filterDiv tatlı">
+      <div class="col-6 mobilKaydirma"><img style="width:300px; height: 300px;" src="./image/kunefe.webp"></div>
+      <div class="col-sm-12">
+        <div class="yazi fiyat">
+          <span>Künefe</span>
+          <span>150 TL</span>
+        </div>
+        <div>
+          <p class="yazi2 yazi">Dondurma ve meyve tabağı servis edilir.</p>
+
+        </div>
+      </div>
+    </div>
+    <div class="filterDiv tatlı">
+      <div class="col-6 mobilKaydirma"><img style="width: 300px; height: 300px;" src="./image/havucdilimi.jpg"></div>
+      <div class="col-sm-12">
+        <div class="yazi fiyat">
+          <span>Havuç Dilimi </span>
+          <span>120 TL</span>
+        </div>
+        <div>
+          <p class="yazi2 yazi">Dondurma ile servis edilir.</p>
+
+        </div>
+      </div>
+    </div>
+    <div class="filterDiv tatlı">
+      <div class="col-6 mobilKaydirma"><img style="width: 300px; height:300px;" src="./image/sutlac.webp"></div>
+      <div class="col-sm-12">
+        <div class="yazi fiyat">
+          <span>Sütlaç</span>
+          <span>70 TL</span>
+        </div>
+        <div>
+          <p class="yazi2 yazi">Kendi özel tarifimizle fırın sütlaç.</p>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="filterDiv icecek">
+      <div class="col-6 mobilKaydirma"><img style="width: 300px; height: 300px" src="./image/kola.jpg"></div>
+      <div class="col-sm-12">
+        <div class="yazi fiyat">
+          <span>Kola</span>
+          <span>30 TL</span>
+        </div>
+        <div>
+          <p class="yazi2 yazi">İsteğe göre buz ile servis edilir.</p>
+
+        </div>
+      </div>
+    </div>
+    <div class="filterDiv icecek">
+      <div class="col-6 mobilKaydirma"><img style="width: 300px; height: 300px;" src="./image/ayran.jpg"></div>
+      <div class="col-sm-12">
+        <div class="yazi fiyat">
+          <span> Yayık Ayran</span>
+          <span>20 TL</span>
+        </div>
+        <div>
+          <p class="yazi2 yazi">El yapımı yoğurt ile yapılır</p>
+
+        </div>
+      </div>
+    </div>
+    <div class="filterDiv icecek">
+      <div class="col-6 mobilKaydirma"><img style="width: 300px; height: 300px;" src="./image/salgam.png"></div>
+      <div class="col-12">
+        <div class="yazi fiyat">
+          <span>Şalgam</span>
+          <span>25 TL</span>
+        </div>
+        <div>
+          <p class="yazi2 yazi">El yapımı kendi imalatımızdır</p>
+        </div>
+      </div>
+    </div>
+    <div class="filterDiv icecek">
+      <div class="col-6 mobilKaydirma"><img style="width: 300px; height: 300px;" src="./image/cay.jpg"></div>
+      <div class="col-sm-12">
+        <div class="yazi fiyat">
+          <span>Çay</span>
+          <span> 5 TL</span>
+        </div>
+        <div>
+          <p class="yazi2 yazi">Yanında kurabiye ile servis edilir</p>
+
+        </div>
+      </div>
+    </div>
+
+
+    <script>
+      filterSelection("all")
+      function filterSelection(c) {
+        var x, i;
+        x = document.getElementsByClassName("filterDiv");
+        if (c == "all") c = "";
+        for (i = 0; i < x.length; i++) {
+          w3RemoveClass(x[i], "show");
+          if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+        }
+      }
+
+      function w3AddClass(element, name) {
+        var i, arr1, arr2;
+        arr1 = element.className.split(" ");
+        arr2 = name.split(" ");
+        for (i = 0; i < arr2.length; i++) {
+          if (arr1.indexOf(arr2[i]) == -1) { element.className += " " + arr2[i]; }
+        }
+      }
+
+      function w3RemoveClass(element, name) {
+        var i, arr1, arr2;
+        arr1 = element.className.split(" ");
+        arr2 = name.split(" ");
+        for (i = 0; i < arr2.length; i++) {
+          while (arr1.indexOf(arr2[i]) > -1) {
+            arr1.splice(arr1.indexOf(arr2[i]), 1);
+          }
+        }
+        element.className = arr1.join(" ");
+      }
+
+
+      var btnContainer = document.getElementById("myBtnContainer");
+      var btns = btnContainer.getElementsByClassName("btn");
+      for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function () {
+          var current = document.getElementsByClassName("active");
+          current[0].className = current[0].className.replace(" active", "");
+          this.className += " active";
+        });
+      }
+
+    </script>
+
+</body>
+
+</html>
